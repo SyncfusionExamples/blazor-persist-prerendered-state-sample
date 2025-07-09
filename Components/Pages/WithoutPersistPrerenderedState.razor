@@ -1,0 +1,23 @@
+﻿@page "/WithoutPersistPrerenderedState"
+@using Sample.Models
+@using Sample.Services
+@inject OrderService OrderService
+
+<h1>Persist prerendered state is Not Enabled</h1>
+<SfGrid DataSource="@Orders">
+    <GridColumns>
+        <GridColumn Field=@nameof(Order.OrderID) HeaderText="Order ID" TextAlign="TextAlign.Right" Width="120"></GridColumn>
+        <GridColumn Field=@nameof(Order.CustomerID) HeaderText="Customer ID" Width="150"></GridColumn>
+        <GridColumn Field=@nameof(Order.OrderDate) HeaderText="Order Date" Format="d" Type="ColumnType.Date" TextAlign="TextAlign.Right" Width="130"></GridColumn>
+        <GridColumn Field=@nameof(Order.Freight) Format="C2" TextAlign="TextAlign.Right" Width="120"></GridColumn>
+        <GridColumn Field=@nameof(Order.ShipCountry) HeaderText="Ship Country" Width="150"></GridColumn>
+    </GridColumns>
+</SfGrid>
+@code {
+    private List<Order> Orders { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        Orders = await OrderService.GetOrdersAsync();
+    }
+}

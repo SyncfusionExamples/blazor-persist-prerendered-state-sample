@@ -1,4 +1,4 @@
-﻿namespace Sample.Models
+﻿namespace PersistPrerenderedState.Models
 {
     public class Order
     {

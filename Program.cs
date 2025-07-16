@@ -1,5 +1,5 @@
-using Sample.Components;
-using Sample.Services;
+using PersistPrerenderedState.Components;
+using PersistPrerenderedState.Services;
 using Syncfusion.Blazor;
 
 var builder = WebApplication.CreateBuilder(args);

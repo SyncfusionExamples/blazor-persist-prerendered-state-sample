@@ -3,8 +3,8 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using System.Collections.Generic;
-using Sample.Models;
-namespace Sample.Services
+using PersistPrerenderedState.Models;
+namespace PersistPrerenderedState.Services
 {   
     public class OrderService
     {
